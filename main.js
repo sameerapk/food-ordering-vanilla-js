@@ -13,7 +13,25 @@ window.onload = () => {
         restaurantDom.innerHTML = renderData
     })
     .catch(err => console.log(err))
-}
+
+document.querySelector('#sort').addEventListener('change', (e)=>{
+    restaurant.getData()
+    .then(res => res.json())
+    .then(data=>{
+        switch(e.target.value) {
+            case 'ETA':
+                data.items = data.items.sort((a,b)=>parseInt(a.ETA) - parseInt(b.ETA))
+                break;
+            case 'name':
+                data.items = data.items.sort((a,b)=> a.name.localeCompare(b.name))
+                break;
+            case 'rating':
+                data.items = data.items.sort((a,b)=>parseFloat(a.rating) - parseFloat(b.rating))
+        }
+        let renderData = ui.displayItems(data.items)
+        restaurantDom.innerHTML = renderData
+    })
+})
 
 document.querySelector('#pagination').addEventListener('click', (e)=> {
     if(e.target.classList.contains('next') && next < total) {
@@ -38,3 +56,4 @@ document.querySelector('#pagination').addEventListener('click', (e)=> {
     }
 
 })
+}
