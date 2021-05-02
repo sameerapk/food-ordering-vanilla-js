@@ -5,8 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food ordering app</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <section>
+        <div class="section-title">
+            <h2 class="header">
+                
+                Food ordering application
+            <button class="favourites">
+                <i class="fa fa-heart fa-lg"></i>
+            </button>
+            </h2>
+        </div>
+        <div class="filter-container">
+            <form class="myForm">
+                <input 
+                type="text"
+                class="typeahead"
+                placeholder="Search restuarants..."
+                />
+                <div id="target">
+
+                </div>
+            </form>
+            <div class="filters">
+                <select id="sort">
+                    <option value="" disabled selected hidden>Sort By :-</option>
+                    <option value="name">Name</option>
+                    <option value="ETA">ETA</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <select id="filter">
+                    <option value="" disabled selected hidden>Filter By :-</option> 
+                    <option value="Indian">Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="American">American</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Seafood">Sea food</option>
+                    <option value="French">French</option>
+                </select>
+            </div>
+        </div>
+        <div class="resturants-center">
+
+        </div>
+    </section>
 </body>
 </html>
