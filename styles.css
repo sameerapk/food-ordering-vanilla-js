@@ -30,7 +30,27 @@ body {
 .filters {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev, .next {
+    width: 95px;
+    height: 8vh;
+    margin-top: 1.5vh;
+    margin-left: 20px;
+    background:linear-gradient(to right, rgb(3, 3, 94), rgb(16, 191, 235));;
+}
+
+.next {
+
+}
+
 
 #filter, #sort {
     background: linear-gradient(to right,rgb(148,143,143), rgb(241,233,233));
@@ -49,13 +69,17 @@ body {
     box-shadow: 0px 1px 5px 1px rgb(10,10,10);
 }
 
+.restaurant {
+    box-shadow: 0px 1px 10px 1px #000;
+  }
+
 .restaurants-center {
     width: 90vw;
     margin: 10px auto;
     max-width: 1170px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 10px;
+    grid-gap: 40px;
 }
 
 .img-container {
@@ -69,5 +93,23 @@ img {
      max-height: 12rem;
 }
 
+.res-content {
+    background: #ececec;
+    padding: 20px;
+}
 
+.myForm {
+    margin-top: 20px;
+    text-align:center;
+}
 
+.header {
+    background: black;
+    color: white;
+    height: 50px;
+    text-align: center;
+}
+
+h2 {
+    padding-top: 8px;
+}
