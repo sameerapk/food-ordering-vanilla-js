@@ -33,6 +33,15 @@ document.querySelector('#sort').addEventListener('change', (e)=>{
     })
 })
 
+document.querySelector('#filter').addEventListener('change', (e) => {
+    restaurant.getData()
+    .then(res=>res.json())
+    .then(data=> {
+        let filterTags = data.items.filter(item => item.tags.includes(e.target.value))
+        restaurantDom.innerHTML =ui.displayItems(filterTags)
+    })
+})
+
 document.querySelector('#pagination').addEventListener('click', (e)=> {
     if(e.target.classList.contains('next') && next < total) {
         prev = prev + 6
