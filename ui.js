@@ -1,6 +1,7 @@
 class UI {
-    displayItems = (restaurants) => {
+    displayItems = (restaurants, prev=0,next = 6) => {
         let output = ''
+        restaurants = restaurants.slice(prev,next)
         restaurants.forEach(restaurant => {
             output += `
             <div class='restaurant'>
