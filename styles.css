@@ -9,6 +9,8 @@
     --mainTransition: all 0.3s linear
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +34,27 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.autocomplete {
+    width: 52vw;
+    background: white;
+    box-shadow: 0px 1px 5px 1px #000;
+    padding: 0.6rem;
+  }
+  
+  .autocomplete:hover {
+    background: rgb(183, 187, 187);
+    cursor: pointer;
+  }
+.myForm {
+    margin: 20px auto;
+    width: 52vw;
+}
+
+#target {
+    text-align:start;
+}
+  
 
 #pagination {
     display: flex;

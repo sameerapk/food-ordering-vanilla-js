@@ -1,4 +1,5 @@
 const restaurantDom = document.querySelector('.restaurants-center')
+const search = document.querySelector('.typeahead')
 let prev = 0;
 let next = 6;
 let total = 15
@@ -32,6 +33,37 @@ document.querySelector('#sort').addEventListener('change', (e)=>{
         restaurantDom.innerHTML = renderData
     })
 })
+
+search.addEventListener('input', (e)=> {
+    restaurant.getData()
+    .then(res=>res.json())
+    .then(data=> {
+        let resBasedOnSearch = data.items.filter(item=>{
+            return item.name.toLowerCase().includes(e.target.value)
+        })
+    this.outputSearchRes(resBasedOnSearch)
+    })
+})
+
+outputSearchRes = (filteredItems) => {
+    if(search.value !== '') {
+        let output = ''
+
+        filteredItems.map(item=>{
+            output += `
+                <p class='autocomplete'>${item.name}</p>
+            `
+        })
+        document.querySelector('#target').addEventListener('click', (e)=>{
+            search.value = e.target.innerText
+            ui.displayItems(filteredItems)
+            document.querySelector('#target').innerHTML = ''    
+        })     
+        document.querySelector('#target').innerHTML = output
+        return
+    }
+    document.querySelector('#target').innerHTML = ''
+}
 
 document.querySelector('#filter').addEventListener('change', (e) => {
     restaurant.getData()

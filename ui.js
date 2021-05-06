@@ -1,5 +1,6 @@
 class UI {
     displayItems = (restaurants, prev=0,next = 6) => {
+        console.log(restaurants)
         let output = ''
         restaurants = restaurants.slice(prev,next)
         restaurants.forEach(restaurant => {
