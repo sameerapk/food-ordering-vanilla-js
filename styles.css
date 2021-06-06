@@ -70,9 +70,6 @@ body {
     background:linear-gradient(to right, rgb(3, 3, 94), rgb(16, 191, 235));;
 }
 
-.next {
-
-}
 
 
 #filter, #sort {
@@ -135,4 +132,15 @@ img {
 
 h2 {
     padding-top: 8px;
+}
+
+@media only screen and (max-width: 567px) {
+ .restaurants-center {
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+ }   
+
+ #filter,#sort {
+     width: 24vw;
+ }
 }
